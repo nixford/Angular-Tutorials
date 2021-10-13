@@ -10,9 +10,9 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     FormsTemplateDrivenComponent,
-    FormsReactiveComponent,
-    HomeComponent
+    FormsReactiveComponent,    
   ],
   imports: [
     BrowserModule,
