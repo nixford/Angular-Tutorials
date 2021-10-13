@@ -1,0 +1,47 @@
+<style>
+.home {
+  font-family:Arial, Helvetica, sans-serif
+}
+
+h1 {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.container-buttons {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.btn-template-driven, .btn-reactive {
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 3%;
+  width: 30%;
+}
+
+.btn-template-driven {
+  background-color: cadetblue;
+}
+
+.btn-reactive {
+  background-color: orange;
+}
+</style>
+
+<div class="home">
+  <h1>Select form type:</h1>
+
+  <div class="container-buttons">
+    <button class="btn-template-driven">Forms - template driven</button>
+    <button class="btn-reactive">Froms - reactive</button>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

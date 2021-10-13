@@ -1,0 +1,17 @@
+<input type="checkbox" [(ngModel)]="showTodoList" />
+
+<div *ngIf="showTodoList">
+    <!-- <input [value]="title" /> -->
+    <input [(ngModel)]="title" *ngIf="showTodoList" />
+    <button (click)="addTodoItem()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let item of todoList">
+        {{ item }}
+    </li>
+</ul>
+
+<button (click)="clearList()">Clear list</button>
+
+<button></button>
