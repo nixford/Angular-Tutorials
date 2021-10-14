@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsService } from './forms.serveice';
+import { Todo } from './todo.model';
 
 @Component({
   selector: 'app-forms-template-driven',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsTemplateDrivenComponent implements OnInit {
 
-  constructor() { }
+  tasks:Todo[] = [];
+
+  constructor(private formsService: FormsService) { }
 
   ngOnInit(): void {
+    // this.formsService.getTasks().subscribe(
+    //   (respone) => {
+    //     this.tasks = respone;
+    //   }
+    // );
   }
 
 }
