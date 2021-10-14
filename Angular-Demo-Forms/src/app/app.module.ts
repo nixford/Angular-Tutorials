@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsTemplateDrivenComponent } from './forms-template-driven/forms-template-driven.component';
 import { FormsReactiveComponent } from './forms-reactive/forms-reactive.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,24 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsService } from './forms.serveice';
-import { Todo } from './todo.model';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-forms-template-driven',
   templateUrl: './forms-template-driven.component.html',
   styleUrls: ['./forms-template-driven.component.css']
 })
-export class FormsTemplateDrivenComponent implements OnInit {
-
-  tasks:Todo[] = [];
-
-  constructor(private formsService: FormsService) { }
-
-  ngOnInit(): void {
-    // this.formsService.getTasks().subscribe(
-    //   (respone) => {
-    //     this.tasks = respone;
-    //   }
-    // );
+export class FormsTemplateDrivenComponent {
+  answer: string = '';
+  
+  onSubmit(form: NgForm) {
+    console.log(form)
+    console.log(form.value)
   }
-
 }

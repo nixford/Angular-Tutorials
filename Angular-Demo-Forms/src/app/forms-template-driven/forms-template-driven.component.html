@@ -1,4 +1,73 @@
 <img src="../../assets/angular-blue.png">
+<!--
+
+The defaut handling of the form is by using action="POST" method and sending the request to some server.
+This is the rason for data disapearing after clicking the submit button.
+Angular handles it ahother way:
+	
+I. Building template-driven forms in Angular:
+
+1. Import FormsModule in app.modules.ts and register it in the @NgModule -> imports:
+
+2. In order to be detected from Angular it is neccessery every input feild to receive "ngModel" and "name" attribute
+		
+3. We can use ngSubmit in order to submit the information in form tag (not in button)
+
+4. Access the values of the form:
+	1) In the form tag => #f="ngForm"
+	2) Pass f in onSubmit(f) function
+	3) In present .ts component file create  -> in the "export" class part onSubmit function, which receives variable -> onSubmit(form: NgForm) 
+	4) All input values are in .vale property
+
+5. Access the values also with "@ViewChild('f') signupForm: NgForm" in present .ts component file
+
+
+
+-->
 <div class="forms-reactive-wrapper">
-    
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+			<div id="user-data">
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input 
+						type="text"
+						id="username"
+						ngModel
+						name="username"
+					>
+				</div>
+				<div class="form-group">
+					<label for="username">Email:</label>
+					<input 
+						type="email"
+						id="email"
+						ngModel
+						name="email"
+					>
+				</div>
+				<div class="form-group">
+					<label for="secret">Secret question:</label>
+					<select
+						id="secret"
+						ngModel
+						name="secret"
+					>
+						<option value="pet">Your first pet?</option>
+						<option value="school">Your first school?</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<textarea 
+						name="questions" 
+						id="questions" 
+						rows="3"
+						[(ngModel)]="answer"
+					>
+					</textarea>
+				</div>
+				<p>Your question: {{ answer }} </p>
+				<div class="form-group"></div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
 </div>
