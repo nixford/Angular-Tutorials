@@ -1,6 +1,5 @@
 <img src="../../assets/angular-blue.png">
 <!--
-
 The defaut handling of the form is by using action="POST" method and sending the request to some server.
 This is the rason for data disapearing after clicking the submit button.
 Angular handles it ahother way:
@@ -20,10 +19,8 @@ I. Building template-driven forms in Angular:
 	4) All input values are in .vale property
 
 5. Access the values also with "@ViewChild('f') signupForm: NgForm" in present .ts component file
-
-
-
 -->
+
 <div class="forms-reactive-wrapper">
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 			<div id="user-data">
@@ -69,5 +66,5 @@ I. Building template-driven forms in Angular:
 				<div class="form-group"></div>
 				<button type="submit">Submit</button>
 			</div>
-		</form>
+	</form>
 </div>
