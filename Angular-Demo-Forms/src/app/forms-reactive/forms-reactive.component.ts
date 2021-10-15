@@ -14,17 +14,22 @@ export class FormsReactiveComponent {
 
     lastName: new FormControl(''),
 
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
-    })
+    email: new FormControl(''),
+
+    // address: new FormGroup({
+    //   street: new FormControl(''),
+    //   city: new FormControl(''),
+    //   state: new FormControl(''),
+    //   zip: new FormControl('')
+    // })
 
   });
 
   onSubmit() {
-    console.log(this.profileForm.value);
+    if (this.profileForm.invalid) {
+      console.log('Invalid input!')
+    }
+    console.log(this.profileForm);
   }
 
 }

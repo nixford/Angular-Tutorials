@@ -1,4 +1,4 @@
-<img src="../../assets/angular-blue.png">
+<img src="../../assets/angular-blue.png" />
 <!--
 The defaut handling of the form is by using action="POST" method and sending the request to some server.
 This is the rason for data disapearing after clicking the submit button (preventDefault).
@@ -13,47 +13,63 @@ I. Building reactive forms in Angular:
 3. In order to be detected from Angular:
     1) it is neccessery form tag to receive -> [formGroup]="profileForm"
     2) formControlName="..."
+
+4. Manipulationg data model with setValue() and atchValue() received from the form
+
+5. When necessary many form instances to be created manually - 
+the FormBuilder class service provides convenient methods for generating controls. 
+The FormBuilder service has three methods: control(), group(), and array(). 
+These are factory methods for generating instances in your component classes including form controls, form groups, and form arrays.
+
+6. Creating dynamic forms - FormArray is an alternative to FormGroup,
+this is a great option if you don't know the number of child values in advance
 		
 -->
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div id="user-data">
+    <div class="form-group">
+      <label for="first-name">First Name: </label>
+      <input 
+        id="first-name" 
+        type="text" 
+        formControlName="firstName" 
+        minlength="5"
+      />
+    </div>
     <div id="user-data">
-        <div class="form-group">
-            <label for="first-name">First Name: </label>
-            <input 
-                id="first-name" 
-                type="text" 
-                formControlName="firstName"
-            >
+      <div class="form-group">
+        <label for="last-name">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastName" />
+      </div>
+    </div>
+    <div id="user-data">
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input 
+          id="email" 
+          type="email" 
+          formControlName="email" />
+      </div>
+    </div>
+    <!-- <div id="user-data">
+      <div class="form-group">
+        <div formGroupName="address">
+          <h2>Address</h2>
+
+          <label for="street">Street: </label>
+          <input id="street" type="text" formControlName="street" />
+
+          <label for="city">City: </label>
+          <input id="city" type="text" formControlName="city" />
+
+          <label for="state">State: </label>
+          <input id="state" type="text" formControlName="state" />
+
+          <label for="zip">Zip Code: </label>
+          <input id="zip" type="text" formControlName="zip" />
         </div>
-        <div id="user-data">
-            <div class="form-group">
-                <label for="last-name">Last Name: </label>
-                <input 
-                    id="last-name" 
-                    type="text" 
-                    formControlName="lastName"
-                >
-            </div>
-        </div>
-        <div id="user-data">
-            <div class="form-group">
-                <div formGroupName="address">
-                    <h2>Address</h2>
-                  
-                    <label for="street">Street: </label>
-                    <input id="street" type="text" formControlName="street">
-                  
-                    <label for="city">City: </label>
-                    <input id="city" type="text" formControlName="city">
-                  
-                    <label for="state">State: </label>
-                    <input id="state" type="text" formControlName="state">
-                  
-                    <label for="zip">Zip Code: </label>
-                    <input id="zip" type="text" formControlName="zip">
-                  </div>
-            </div>
-        </div>
-        <button type="submit">Submit</button>
-    </div>    
+      </div>
+    </div> -->
+    <button type="submit">Submit</button>
+  </div>
 </form>
